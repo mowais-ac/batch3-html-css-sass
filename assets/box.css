@@ -1,0 +1,20 @@
+.box{
+    padding: 100px;
+    border-radius: 10px 70px;
+    /* border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px; */
+}
+
+body {
+    background: #E3E6FF;
+}
+.btn {
+    border: solid 5px #030d64;
+    padding: 10px 25px; 
+    background: none;
+    border-radius: 100px;
+    color: #001AFF;
+    background-color: none;
+}

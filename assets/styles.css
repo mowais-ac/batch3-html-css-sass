@@ -1,0 +1,15 @@
+* {
+    border: dotted 1px red;
+}
+
+.defaultFontFamily {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: yellow;
+}
+
+.blue {
+    color: blue
+}
+.orange{
+    color: orange;
+}
