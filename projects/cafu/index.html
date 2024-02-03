@@ -2,8 +2,73 @@
 <html>
     <head>
         <link rel="stylesheet" href="assets/css/global.css" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="./assets/js/jquery-3.7.1.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                // Hamburger
+                $('.hamburger').on('click', function() {
+                    $('body').find('.main_menu').addClass('active');
+                });
+
+                $('.close_icon').on('click', function() {
+                    $('.main_menu').removeClass('active');
+                });
+
+                // Tabs
+                $('.tab_list a').on('click', function() {
+                    var selectedValue = $(this).attr('href');
+                    var selectedTab = $(this).closest('.tabs').find(selectedValue);
+                    
+                    $(this).closest('ul').find('li').removeClass('active');
+                    $(this).closest('li').addClass('active');
+                    $(this).closest('.tabs').find('.tab').removeClass('active');
+                    selectedTab.addClass('active');
+                })
+            })
+        </script>
     </head>
     <body>
+
+        <div class="main_menu">
+            <div class="content_area flexbox">
+                <img src="./assets/images/close_icon.png" class="close_icon"/>
+                <div class="left_column">
+                    <ul class="no-list">
+                        <li><a href="#personal">Personal</a></li>
+                        <li><a href="#business">Business</a></li>
+                    </ul>
+                </div>
+                <div class="right_column">
+                    <div id="personal" class="nav_content">
+                        <nav class="main_menu_list">
+                            <ul class="no-list">
+                                <li><a href="#">Fuel Delivery</a></li>
+                                <li><a href="#">Rewards</a></li>
+                                <li><a href="#">Car Wash</a></li>
+                                <li><a href="#">Tyres</a></li>
+                                <li><a href="#">Battery</a></li>
+                                <li><a href="#">Engine Oil</a></li>
+                                <li><a href="#">Emergency Fuel Service</a></li>
+                                <li><a href="#">Emergency Services</a></li>
+                                <li><a href="#">Insurance</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div id="business" class="nav_content">
+                        <nav class="main_menu_list">
+                            <ul class="no-list">
+                                <li><a href="#">CAFU for Business</a></li>
+                                <li><a href="#">Partnerships</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Header -->
         <header class="header">
             <div class="fluid-container flexbox jc-space-between align-items-center">
@@ -61,9 +126,211 @@
             </div>
         </section>
         <!-- Reports -->
-        <section class="section_reports"></section>
+        <section class="section_reports section_padding">
+            <div class="container">
+                <div class="flexbox align-items-center">
+                    <h2 class="white nomargin report_heading">CAFU Sustainability Report 2022</h2>
+                    <a href="#" class="btn btn_secondary small">Download PDF</a>
+                </div>
+            </div>
+        </section>
         <!-- Services -->
-        <section class="section_services"></section>
+        <section class="section_services section_padding_lg">
+            <div class="container">
+                <div class="hgroup">
+                    <h2>We help <span class="color-secondary">save</span> your most precious asset – <span class="color-secondary">time</span></h2>
+                    <p>CAFU mobile car services in the UAE help you break free from the petrol station. Saving you time, by bringing fuel to
+                    you, anytime, anywhere. An eco-friendly mobile car wash. And engine oil, battery and tyre change services, all just a
+                    tap away.</p>
+                </div>
+                <!-- tabs - [start] -->
+                <div class="tabs">
+                    <nav class="tab_list">
+                        <ul class="flexbox align-items-center no-list">
+                            <li class="active"><a href="#fuelDeliver">Fuel delivery</a></li>
+                            <li><a href="#carWash">Car wash</a></li>
+                            <li><a href="#engineOil">Engine Oil</a></li>
+                            <li><a href="#battery">Battery</a></li>
+                            <li><a href="#tyres">Tyres</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="tab_content">
+                        <div class="tab active" id="fuelDeliver">
+                            <div class="flexbox align-items-center">
+                                <div class="left_column">
+                                    <img src="./assets/images/01-fuel.png" />
+                                </div>
+                                <div class="right_column">
+                                    <h3>
+                                        We’ll keep you <span class="color-secondary">moving</span>
+                                    </h3>
+                                    <ul class="no-list check-list">
+                                        <li>Save time and beat the queues</li>
+                                        <li>24/7 petrol and diesel delivery</li>
+                                        <li>Same price as the petrol station, and no delivery fees</li>
+                                        <li>Contactless – order and pay on the app</li>
+                                    </ul>
+
+                                    <div class="flexbox align-items-center">
+                                        <div class="downloadButton flexbox align-items-center">
+                                            Download Now
+                                            <a href="#">
+                                                <img src="assets/images/app-store.svg" />
+                                            </a>
+                                            <a href="#">
+                                                <img src="assets/images/google-play.svg" />
+                                            </a>
+                                            <a href="#">
+                                                <img src="assets/images/huawei.svg" />
+                                            </a>
+                                        </div>
+                                        <a href="#" class="btn btn_secondary">Lear More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab" id="carWash">
+                            <div class="flexbox align-items-center">
+                                <div class="left_column">
+                                    <img src="./assets/images/01-fuel.png" />
+                                </div>
+                                <div class="right_column">
+                                    <h3>
+                                        We will keep your cal <span class="color-secondary">clean</span>
+                                    </h3>
+                                    <ul class="no-list check-list">
+                                        <li>Save time and beat the queues</li>
+                                        <li>24/7 petrol and diesel delivery</li>
+                                        <li>Same price as the petrol station, and no delivery fees</li>
+                                        <li>Contactless – order and pay on the app</li>
+                                    </ul>
+
+                                    <div class="flexbox align-items-center">
+                                        <div class="downloadButton flexbox align-items-center">
+                                            Download Now
+                                            <a href="#">
+                                                <img src="assets/images/app-store.svg" />
+                                            </a>
+                                            <a href="#">
+                                                <img src="assets/images/google-play.svg" />
+                                            </a>
+                                            <a href="#">
+                                                <img src="assets/images/huawei.svg" />
+                                            </a>
+                                        </div>
+                                        <a href="#" class="btn btn_secondary">Lear More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab" id="engineOil">
+                            <div class="flexbox align-items-center">
+                                <div class="left_column">
+                                    <img src="./assets/images/01-fuel.png" />
+                                </div>
+                                <div class="right_column">
+                                    <h3>
+                                        We’ll keep you <span class="color-secondary">moving</span>
+                                    </h3>
+                                    <ul class="no-list check-list">
+                                        <li>Save time and beat the queues</li>
+                                        <li>24/7 petrol and diesel delivery</li>
+                                        <li>Same price as the petrol station, and no delivery fees</li>
+                                        <li>Contactless – order and pay on the app</li>
+                                    </ul>
+
+                                    <div class="flexbox align-items-center">
+                                        <div class="downloadButton flexbox align-items-center">
+                                            Download Now
+                                            <a href="#">
+                                                <img src="assets/images/app-store.svg" />
+                                            </a>
+                                            <a href="#">
+                                                <img src="assets/images/google-play.svg" />
+                                            </a>
+                                            <a href="#">
+                                                <img src="assets/images/huawei.svg" />
+                                            </a>
+                                        </div>
+                                        <a href="#" class="btn btn_secondary">Lear More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab" id="battery">
+                            <div class="flexbox align-items-center">
+                                <div class="left_column">
+                                    <img src="./assets/images/01-fuel.png" />
+                                </div>
+                                <div class="right_column">
+                                    <h3>
+                                        We’ll keep you <span class="color-secondary">moving</span>
+                                    </h3>
+                                    <ul class="no-list check-list">
+                                        <li>Save time and beat the queues</li>
+                                        <li>24/7 petrol and diesel delivery</li>
+                                        <li>Same price as the petrol station, and no delivery fees</li>
+                                        <li>Contactless – order and pay on the app</li>
+                                    </ul>
+
+                                    <div class="flexbox align-items-center">
+                                        <div class="downloadButton flexbox align-items-center">
+                                            Download Now
+                                            <a href="#">
+                                                <img src="assets/images/app-store.svg" />
+                                            </a>
+                                            <a href="#">
+                                                <img src="assets/images/google-play.svg" />
+                                            </a>
+                                            <a href="#">
+                                                <img src="assets/images/huawei.svg" />
+                                            </a>
+                                        </div>
+                                        <a href="#" class="btn btn_secondary">Lear More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab" id="tyres">
+                            <div class="flexbox align-items-center">
+                                <div class="left_column">
+                                    <img src="./assets/images/01-fuel.png" />
+                                </div>
+                                <div class="right_column">
+                                    <h3>
+                                        We’ll keep you <span class="color-secondary">moving</span>
+                                    </h3>
+                                    <ul class="no-list check-list">
+                                        <li>Save time and beat the queues</li>
+                                        <li>24/7 petrol and diesel delivery</li>
+                                        <li>Same price as the petrol station, and no delivery fees</li>
+                                        <li>Contactless – order and pay on the app</li>
+                                    </ul>
+
+                                    <div class="flexbox align-items-center">
+                                        <div class="downloadButton flexbox align-items-center">
+                                            Download Now
+                                            <a href="#">
+                                                <img src="assets/images/app-store.svg" />
+                                            </a>
+                                            <a href="#">
+                                                <img src="assets/images/google-play.svg" />
+                                            </a>
+                                            <a href="#">
+                                                <img src="assets/images/huawei.svg" />
+                                            </a>
+                                        </div>
+                                        <a href="#" class="btn btn_secondary">Lear More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- tabs - [/end] -->
+            </div>
+        </section>
         <!-- Steps -->
         <section class="section_steps"></section>
         <!-- Feature 1 -->
