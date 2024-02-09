@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            .box-1, .box-2 {
+                width: 300px;
+                height: 300px;
+            }
+            .box-1{
+                background-color: red;
+            }
+            .box-2{
+                background-color: blue;
+            }
+
+            /* @media screen and (max-width: 799px) {
+                body {
+                    background: yellow
+                }
+            }
+
+            @media screen and (max-width: 800px) {
+                body {
+                    background: orange
+                }
+            } */
+
+            @media screen and (min-width: 768px) and (max-width: 1024px) {
+                body {
+                    background-color: blueviolet;
+                }
+            }
+            
+            
+            
+            /* Desktop - Small Screen (1200-2400)  */
+            /* Tablet - Screen Rang (768-1200)  */
+            /* Mobile - Screen range  (0-767)  */
+            -----
+            /* Add - Mobile - Screen range  (0-320)  */
+
+
+            </style>
+    </head>
+
+    <body>
+        <div class="header mobile"></div>
+        <div class="box-1"></div>
+        <div class="header desktop"></div>
+        <div class="box-2"></div>
+    </body>
+</html>
